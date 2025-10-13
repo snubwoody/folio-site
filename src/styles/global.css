@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import "./text.css";
+
+@theme{
+	--spacing: 8px;
+}
