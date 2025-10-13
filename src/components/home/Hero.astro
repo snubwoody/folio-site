@@ -1,11 +1,17 @@
-
+---
+import Button from "@components/Button.astro"
+---
 <section>
-	<div>
+	<div class="info-section">
 		<h1>Folio</h1>
 		<p>
 			A free, privacy-focused budgeting app. Track expenses, manage budgets, and 
 			analyze your spending all while keeping your financial data private and under your complete control.
 		</p>
+		<div class="flex items-center gap-4">
+			<Button>Download for windows</Button>
+			<a href="/downloads" class="text-purple-500">Other platforms</a>	
+		</div>
 	</div>
 </section>
 
@@ -18,7 +24,7 @@
 		padding: 88px 0px;
 	}
 
-	div{
+	.info-section{
 		display: flex;
 		flex-direction: column;
 		gap: 24px;
