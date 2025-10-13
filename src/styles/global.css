@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./text.css";
+@import "./colors.css";
 
 @theme{
 	--spacing: 8px;
