@@ -5,7 +5,8 @@
   "compilerOptions": {
 	"paths": {
 		"@layout/*": ["./src/layout/*"],
-		"@styles/*": ["./src/styles/*"]
+		"@styles/*": ["./src/styles/*"],
+		"@components/*": ["./src/components/*"],
 	}
   }
 }

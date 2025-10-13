@@ -11,6 +11,16 @@
 	--text-body: 1rem;
 	--text-sm: .8125rem;
 	--text-xs: .625rem;
+
+	--text-h1--line-height: 1;
+	--text-h2--line-height: 1;
+	--text-h3--line-height: 1;
+	--text-h4--line-height: 1.25;
+	--text-h5--line-height: 1.25;
+	--text-h6--line-height: 1.5;
+	--text-body--line-height: 1.5;
+	--text-sm--line-height: 1.5;
+	--text-xs--line-height: 1.5;
 }
 
 @font-face {
