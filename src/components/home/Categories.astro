@@ -1,0 +1,82 @@
+---
+type Bar = {
+    title: string
+    percentage: number
+}
+
+const bars: Bar[] = [
+    {title: "Rent",percentage: 100},
+    {title: "Groceries",percentage: 50},
+    {title: "Movies",percentage: 10},
+    {title: "Subscriptions",percentage: 20},
+    {title: "Clothing",percentage: 25},
+    {title: "Fuel",percentage: 30},
+    {title: "Tips",percentage: 5},
+]
+---
+
+<section>
+    <div class="flex-1 p-8">
+        <h4 data-observe>Use categories to know exactly where your money is going</h4>
+    </div>
+    <div class="bg-neutral-25 flex-1">
+        <ul>
+            {bars.map(bar =>
+                <li data-observe class="bar-title">{bar.title}</li>
+                <li data-observe style={`--width:${bar.percentage}%`} class="graph-bar"></li>
+            )}
+        </ul>
+    </div>
+</section>
+
+<style>
+
+    @keyframes animate-bar {
+        from{
+            width: 0;
+            opacity: 1;
+        }
+    }
+    section{
+        display: flex;
+        gap: 48px;
+    }
+
+    ul{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 16px;
+        padding: 64px;;
+    }
+
+    .bar-title{
+        opacity: 0;
+        transition: all 250ms;
+
+        &[data-visible="true"]{
+            opacity: 1;
+        }
+    }
+
+    .graph-bar{
+        background: var(--color-purple-500);
+        height: 16px;
+        //width: 100%;
+        border-radius: var(--radius-xs);
+        width: 0;
+        transition: width 450ms;
+        &[data-visible="true"]{
+            width: var(--width);
+        }
+    }
+
+    h4{
+        max-width: 75ch;
+        opacity: 0;
+        transition: all 250ms;
+
+        &[data-visible="true"]{
+            opacity: 1;
+        }
+    }
+</style>
