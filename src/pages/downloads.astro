@@ -3,8 +3,11 @@ import BaseLayout from "@layout/BaseLayout.astro"
 import Button from "../components/Button.astro";
 import WindowsLogoFill from "phosphor-astro/WindowsLogoFill.astro";
 import DownloadLinks from "@components/downloads/DownloadLinks.astro";
+import {getDownloadLinks} from "../lib/downloads";
 
 export const prerender = false;
+const downloadLinks = await getDownloadLinks();
+
 ---
 
 <BaseLayout>
@@ -19,7 +22,7 @@ export const prerender = false;
                 Download for windows
             </Button>
         </div>
-        <DownloadLinks/>
+        <DownloadLinks {downloadLinks}/>
     </main>
 </BaseLayout>
 

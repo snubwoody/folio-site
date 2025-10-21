@@ -4,20 +4,31 @@ type Size = "medium";
 
 type Props = {
 	variant?: Variant,
-	size?: Size
+	size?: Size,
+	/**
+	 * Converts the button into a link
+	 */
+	href?: string
 }
 
 const {
 	variant = "primary",
-	size = "medium"
+	size = "medium",
+	href,
 }: Props = Astro.props;
 
 const buttonVariant = `btn-${variant}`;
 ---
 
+{href ?
+<a {href} class={`btn ${buttonVariant}`}>
+	<slot/>
+</a>
+	:
 <button class={`btn ${buttonVariant}`}>
 	<slot/>
 </button>
+	}
 
 <style>
 	.btn{
