@@ -3,6 +3,10 @@ import Button from "@components/Button.astro";
 import WindowsLogo from "phosphor-astro/WindowsLogo.astro";
 import AppleLogo from "phosphor-astro/AppleLogo.astro";
 import LinuxLogo from "phosphor-astro/LinuxLogo.astro";
+import {getDownloadLinks} from "../../lib/downloads";
+
+const downloadLinks = await getDownloadLinks();
+console.log(downloadLinks)
 ---
 
 <ul>
