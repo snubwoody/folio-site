@@ -20,7 +20,7 @@ import LinuxLogo from "phosphor-astro/LinuxLogo.astro";
             </Button>
         </div>
     </li>
-    <li class="flex gap-1 border-x border-x-neutral-100">
+    <li class="flex gap-1 max-md:border-y md:border-x border-neutral-100">
         <header>
             <AppleLogo width={20}/>
             <h6>MacOS</h6>
@@ -55,6 +55,10 @@ import LinuxLogo from "phosphor-astro/LinuxLogo.astro";
         display: flex;
         width: 100%;
         max-width: 1450px;
+
+        @media (width < 768px) {
+            flex-direction: column;
+        }
     }
 
     li{
@@ -63,6 +67,10 @@ import LinuxLogo from "phosphor-astro/LinuxLogo.astro";
         flex-direction: column;
         gap: 12px;
         padding: 0 16px;
+
+        @media (width < 768px) {
+            padding: 36px 24px;
+        }
 
         header{
             display: flex;

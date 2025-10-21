@@ -15,12 +15,12 @@ const {
 const buttonVariant = `btn-${variant}`;
 ---
 
-<button class={`${buttonVariant}`}>
+<button class={`btn ${buttonVariant}`}>
 	<slot/>
 </button>
 
 <style>
-	button{
+	.btn{
 		display: flex;
 		gap: 8px;
 		align-items: center;
@@ -28,12 +28,14 @@ const buttonVariant = `btn-${variant}`;
 		transition: all 250ms;
 		border-radius: var(--radius-md);
 		padding: 8px 12px;
+		cursor: pointer;
 
 		svg{
 			width: 16px;
 			aspect-ratio: 1;
 		}
 	}
+
 
 	.btn-primary{
 		background-color: var(--color-surface-primary);
