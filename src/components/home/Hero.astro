@@ -1,5 +1,7 @@
 ---
 import Button from "@components/Button.astro"
+import Screenshot from "@assets/Screenshot.png";
+import Image from "astro/components/Image.astro";
 ---
 
 <section>
@@ -14,6 +16,7 @@ import Button from "@components/Button.astro"
 			<a href="/downloads" class="text-purple-500">Other platforms</a>	
 		</div>
 	</div>
+	<Image src={Screenshot} alt="App screenshot"/>
 </section>
 
 <style>
@@ -23,6 +26,13 @@ import Button from "@components/Button.astro"
 		align-items: center;
 		gap: 64px;
 		padding: 88px 0px;
+	}
+
+	img{
+		width: 100%;
+		max-width: 1000px;
+		box-shadow: var(--shadow-purple-md);
+		border-radius: var(--radius-lg);
 	}
 
 	.info-section{
