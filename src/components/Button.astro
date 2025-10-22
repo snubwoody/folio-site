@@ -1,4 +1,5 @@
 ---
+import type {HTMLAttributes} from "astro/types";
 type Variant = "primary" | "secondary" | "neutral" | "bordered";
 type Size = "medium";
 
@@ -9,23 +10,26 @@ type Props = {
 	 * Converts the button into a link
 	 */
 	href?: string
-}
+} & HTMLAttributes<"button">;
 
 const {
 	variant = "primary",
 	size = "medium",
 	href,
+	class: userClass,
+	...rest
 }: Props = Astro.props;
 
-const buttonVariant = `btn-${variant}`;
+// TODO: test passing in a custom class
+const buttonVariant = `btn-${variant} ${userClass}`;
 ---
 
 {href ?
-<a {href} class={`btn ${buttonVariant}`}>
+<a {href} class={`btn ${buttonVariant}`} {...rest}>
 	<slot/>
 </a>
 	:
-<button class={`btn ${buttonVariant}`}>
+<button class={`btn ${buttonVariant}`} {...rest}>
 	<slot/>
 </button>
 	}
